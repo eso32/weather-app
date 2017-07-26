@@ -1,0 +1,44 @@
+body{
+  background: blue;
+}
+
+header{
+  div.container{
+    background: lightgrey;
+    height: 200px;
+    div{
+      ul{
+        li{
+          display: inline-block;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  div.jumbotron{
+    background: lightgreen;
+    height: 200px;
+  }
+}
+
+main{
+  div.row{
+    div{
+      padding: 10px;
+      div.widget{
+        height: 100px;
+        background: lightgrey;
+      }
+      div.add{
+        height: 100px;
+        background: grey;
+      }
+    }
+  }
+}
+
+footer.jumbotron{
+  background: grey;
+  margin-bottom: 0;
+  margin-top: 30px;
+}

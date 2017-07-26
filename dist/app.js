@@ -1,0 +1,1 @@
+$(document).ready(function(){var n,t=$(".widget"),e=[2488853,2488042,2455920,2487956,23511744];$.each(t,function(t,c){n=$.getJSON("proxy.php",{c:e[t]},function(n){c.innerHTML=n.title})})});

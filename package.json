@@ -1,0 +1,40 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "App displays weather",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eso32/weather-app.git"
+  },
+  "keywords": [
+    "weather",
+    "MetaWeather",
+    "JSON",
+    "JS"
+  ],
+  "author": "Tomasz Szlapa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eso32/weather-app/issues"
+  },
+  "homepage": "https://github.com/eso32/weather-app#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.2.3",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-jshint": "^1.9.2",
+    "gulp-minify-css": "^0.5.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^0.6.6",
+    "gulp-ruby-sass": "^2.1.1",
+    "gulp-uglify": "^2.1.2",
+    "gulp-watch": "^4.1.1"
+  }
+}
