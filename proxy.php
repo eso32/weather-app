@@ -2,27 +2,35 @@
 
 header('Content-Type: application/json');
 
-$c = $_GET['c'];
+if(isset($_GET['c'])){
+  $c = $_GET['c'];
 
-$url = 'https://www.metaweather.com/api/location/'.$c.'/';
+  $url = 'https://www.metaweather.com/api/location/'.$c.'/';
 
-$handle = fopen($url, "r");
+  $handle = fopen($url, "r");
 
-if($handle){
-  while(!feof($handle)){
-    $buffer = fgets($handle, 4096);
-    echo $buffer;
-  }
-  fclose($handle);
+  if($handle){
+    while(!feof($handle)){
+      $buffer = fgets($handle, 4096);
+      echo $buffer;
+    }
+    fclose($handle);
+  };
+} elseif(isset($_GET['city'])) {
+  $city = $_GET['city'];
+
+  $url = 'https://www.metaweather.com/api/location/search/?query='.$city;
+
+  $handle = fopen($url, "r");
+
+  if($handle){
+    while(!feof($handle)){
+      $buffer = fgets($handle, 4096);
+      echo $buffer;
+    }
+    fclose($handle);
+  };
 }
 
-// echo $c;
-// echo json_encode($data);
-//
-// if($_GET['a'] == "ble"){
-//   echo "{Cześć szefie!}";
-// } else {
-//   echo "Siema plebie!";
-// }
 
 ?>
