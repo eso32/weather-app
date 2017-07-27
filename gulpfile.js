@@ -24,7 +24,7 @@ gulp.task('sass', function () {
   return sass(src_sass)
     .on('error', sass.logError)
     .pipe(plumber())
-    .pipe(autoprefixer('last 50 versions'))
+    .pipe(autoprefixer('last 150 versions'))
     // .pipe(concat('app.min.css'))
     .pipe(minify_css())
     .pipe(gulp.dest(dist_css))

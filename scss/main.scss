@@ -1,23 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Gloria+Hallelujah|Lobster|Open+Sans|Passion+One|Roboto');
+$cl500: #00bcd4;
+$cls: #ff6d00;
+$clsl: #ff9e40;
+$clsh: #c43c00;
+$widBG: #f2f2f2;
+
+
 body{
-  background: blue;
+  min-width: 290px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 header{
   div.container{
-    background: lightgrey;
-    height: 200px;
+    padding: 30px 0px;
+    a{
+      color: black;
+      h1{
+        display: inline-block;
+        margin: 0;
+        font-family: 'Anton', sans-serif;
+        cursor: pointer;
+        span{
+          color: $cls;
+        }
+      }
+      &:hover{
+        text-decoration: none;
+      }
+    }
     div{
-      ul{
-        li{
+      position: relative;
+      span.hamburger{
+        display: none;
+      }
+      span.cross{
+        display: none;
+      }
+      .menu{
+        display: block;
+      	z-index:1000000;
+      	font-weight: 500;
+      	font-size:0.8em;
+      	width:100%;
+      	background: white;
+      	position:static;
+      	text-align:left;
+      	font-size:12px;
+        ul {
+          float: right;
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+          list-style-image: none;
+        }
+        li {
           display: inline-block;
-          margin-right: 10px;
+          padding:15px 0 15px 0;
+          border-bottom:#dddddd 2px solid;
+          margin-right: 30px;
+          transition: all 0.3s linear;
+          cursor: pointer;
+          &:hover{
+            border-bottom: $cls 2px solid;
+          }
         }
       }
     }
   }
   div.jumbotron{
+    padding-left: 50px;
     background: lightgreen;
-    height: 200px;
+    height: 300px;
+    background: $cl500;
+    h1{
+      margin-bottom: 40px;
+      font-family: 'Anton', sans-serif;
+      span{
+        color: $cls;
+      }
+    }
+    span.motto{
+      padding-left: 30px;
+      font-family: 'Gloria Hallelujah', cursive;
+      font-size: 30px;
+    }
   }
 }
 
@@ -26,12 +93,115 @@ main{
     div{
       padding: 10px;
       div.widget{
-        height: 100px;
-        background: lightgrey;
+        box-shadow: 0 0 5px grey;
+        min-height: 200px;
+        background: $widBG;
+        position: relative;
+        div{
+          padding: 0;
+          margin: 0;
+          div{
+            padding: 0;
+            h3{
+              margin: 0;
+              padding: 0;
+              font-family: 'Anton', sans-serif;
+            }
+            span.weather{
+
+            }
+            span.temp{
+              // color: green;
+              font-size: 52px;
+            }
+            img{
+              height: 100px;
+              width: auto;
+              position: absolute;
+              right: 10px;
+              top: 10px;
+            }
+          }
+        }
+        div.row.widget-bottom{
+          border-top: 2px solid $cls;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          height: 40px;
+          div{
+            border-right: 1px dashed $cls;
+            height: 100%;
+            &:nth-last-child(1){
+              border-right: none;
+            }
+            span.date{
+              position: absolute;
+              top: -20px;
+              left: 50%;
+              transform: translate(-50%);
+            }
+            span.temp-bottom{
+              z-index: 1000;
+              position: absolute;
+              top: 5px;
+              left: 3px;
+              font-size: 16px;
+            }
+            img{
+              height: 50%;
+              width: auto;
+              position: absolute;
+              right: 5px;
+              top: 5px;
+              z-index: 999;
+            }
+          }
+        }
+        div.loader{
+          margin: 0;
+          padding: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          div.spinner{
+            width: 80px;
+            height: 80px;
+            border: 2px solid white;
+            border-bottom: 2px solid #ff6d00;
+            border-radius: 100%;
+            animation: rotate 1s linear infinite;
+          }
+        }
       }
-      div#add{
-        height: 100px;
-        background: grey;
+    }
+    div.new{
+      div.widget{
+        background: $widBG;
+        h3{
+          margin: 10px 0;
+          padding: 0;
+          font-family: 'Anton', sans-serif;
+        }
+        input{
+          width: 100%;
+          height: 40px;
+          font-size: 35px;
+        }
+        button{
+          margin-top: 20px;
+          width: 100%;
+          height: 40px;
+          background: $cls;
+          border-top: 2px solid $clsl;
+          border-left: 2px solid $clsl;
+          border-bottom: 2px solid $clsh;
+          border-right: 2px solid $clsh;
+        }
       }
     }
   }
@@ -41,4 +211,165 @@ footer.jumbotron{
   background: grey;
   margin-bottom: 0;
   margin-top: 30px;
+  padding-bottom: 10px;
+  position: relative;
+  div.container{
+    div.to-top{
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      top: -30px;
+      right: 50px;
+      background: $cls;
+      border-radius: 100%;
+      cursor: pointer;
+      img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-90deg);
+      }
+    }
+    div.row{
+      div{
+        ul{
+          padding: 0;
+          list-style: none;
+        }
+      }
+      p{
+        padding-top: 30px;
+        text-align: center;
+        font-size: 14px;
+        color: white;
+        span{
+          color: $cls;
+          font-weight: 900;
+        }
+      }
+    }
+  }
+}
+
+div.modal{
+  div.modal-dialog{
+    div.modal-content{
+      div.modal-body{
+        min-height: 100px;
+        div{
+          div.loader{
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            div.spinner{
+              width: 80px;
+              height: 80px;
+              border: 2px solid lightgrey;
+              border-bottom: 2px solid #ff6d00;
+              border-radius: 100%;
+              animation: rotate 1s linear infinite;
+            }
+          }
+          div.item-found{
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid $cls;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            p{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotate{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  header{
+    div.container{
+      div{
+        position: relative;
+        span.hamburger{
+          display: block;
+          background:none;
+          position:absolute;
+          top:-10px;
+          right:0;
+          line-height:45px;
+          padding:5px 15px 0px 15px;
+          color:#999;
+          border:0;
+          font-size:1.4em;
+          font-weight:bold;
+          cursor:pointer;
+          outline:none;
+          z-index:10000000000000;
+        }
+        span.cross{
+          background:none;
+          position:absolute;
+          top:-10px;
+          right:0;
+          padding:7px 15px 0px 15px;
+          color:#999;
+          border:0;
+          font-size:3em;
+          line-height:65px;
+          font-weight:bold;
+          cursor:pointer;
+          outline:none;
+          z-index:10000000000000;
+        }
+        .menu{
+        	z-index:1000000;
+        	font-weight:bold;
+        	font-size:0.8em;
+        	width:50%;
+          min-width: 150px;
+        	background:#f1f1f1;
+        	position:absolute;
+          top: 30px;
+          right:0;
+        	text-align:center;
+        	font-size:12px;
+        }
+        .menu ul {
+          float: none;
+        	margin: 0;
+        	padding: 0;
+        	list-style-type: none;
+        	list-style-image: none;
+        }
+        .menu li {
+        	display: block;
+        	padding:15px 0 15px 0;
+        	border-bottom:#dddddd 1px solid;
+          margin: 0;
+        }
+      }
+    }
+    div.jumbotron{
+      span.motto{
+        padding-left: 0px;
+        font-family: 'Gloria Hallelujah', cursive;
+        font-size: 30px;
+      }
+    }
+  }
 }

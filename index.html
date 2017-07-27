@@ -6,8 +6,9 @@
     <title>Weather App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Weather in 5 seconds">
-    <link rel="stylesheet" href="dist/main.css">
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="dist/main.css">
 
     <!--[if lt IE 9]>
      <script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -15,23 +16,27 @@
 </head>
 <body>
 
-  <header>
+  <header id="top">
     <div class="container">
-      <div class="col-md-2">
-        <span>Check weather</span>
+      <div class="col-xs-10 col-sm-4">
+        <a href="#"><h1><span>W</span>eather<span>.</span>com</h1></a>
       </div>
-      <div class="col-md-offset-4 col-md-6">
-        <ul class="menu">
-          <li>Home</li>
-          <li>Our's recommendation</li>
-          <li>Vist</li>
-          <li>About us</li>
-          <li>MetaWeather</li>
-        </ul>
+      <div class="col-xs-2 col-sm-8">
+        <span class="hamburger">&#9776;</span>
+        <span class="cross">&#735;</span>
+        <div class="menu">
+          <ul >
+            <li>Home</li>
+            <li>Visit</li>
+            <li>About us</li>
+            <li><a href="https://www.metaweather.com/" target="_blank">MetaWeather.com</a></li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="jumbotron">
-
+      <h1><span>W</span>eather forecast</h1>
+      <span class="motto">Solid as rock, accurate as it should be!</span>
     </div>
   </header>
 
@@ -39,36 +44,74 @@
     <div class="row">
       <div class="col-md-4">
         <div class="widget">
-          smth
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="widget">
-          smth
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="widget">
-          smth
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="widget">
-          smth
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="widget">
-          smth
-        </div>
-      </div>
-      <div class="col-md-4" id="new">
-        <div>
-          <input type="text" id="city" />
-          <button type="button" name="button" id="search">Search</button>
-          <div id="result">
+          <div class="loader">
+            <div class="spinner">
 
+            </div>
           </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="widget">
+          <div class="loader">
+            <div class="spinner">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="widget">
+          <div class="loader">
+            <div class="spinner">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="widget">
+          <div class="loader">
+            <div class="spinner">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="widget">
+          <div class="loader">
+            <div class="spinner">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="widget">
+          <div class="loader">
+            <div class="spinner">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="widget">
+          <div class="loader">
+            <div class="spinner">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 new" id="new">
+        <div class="widget">
+          <h3>Add another city</h3>
+          <input type="text" id="city" />
+          <button data-toggle="modal" type="button" name="button" id="search">Search</button>
         </div>
       </div>
     </div>
@@ -76,40 +119,73 @@
 
   <footer class="jumbotron">
     <div class="container">
+      <a href="#top">
+        <div class="to-top">
+          <img src="img/arrow.svg" alt="">
+        </div>
+      </a>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
           <div class="row">
             <div class="col-xs-4 col-md-4">
-              Unordered list below:
-              <ul>
-                <li>First</li>
-                <li>Second</li>
-                <li>Third</li>
+              <h4>We gather data from:</h4>
+                BBC, Forecast.io, HAMweather, Met Office, OpenWeatherMap, Weather Underground, World Weather Online
+                Yahoo
               </ul>
             </div>
             <div class="col-xs-4 col-md-4">
+              <h4>Weather forecast brought to you by:</h4>
               <ul>
-                <li>First</li>
-                <li>Second</li>
-                <li>Third</li>
+                <li>Nestle</li>
+                <li>Coca-Cola</li>
               </ul>
             </div>
             <div class="col-xs-4 col-md-4">
-              Unordered list below:
+              <h4>Sites to visit:</h4>
               <ul>
-                <li>First</li>
-                <li>Second</li>
-                <li>Third</li>
+                <li>weather.pl</li>
+                <li>alive.pl</li>
+                <li>nike.com</li>
+                <li>google.com</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <p>All rights reserved @2017 <span>w</span>eather<span>.</span>com</p>
+        </div>
+      </div>
     </div>
   </footer>
-<div id="response">
 
-</div>
+  <!-- Modal -->
+  <div id="photoModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Choose your city</h4>
+        </div>
+        <div class="modal-body">
+          <div id="result">
+            <div class="loader">
+              <div class="spinner">
+                loool
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <script
   src="http://code.jquery.com/jquery-2.2.4.min.js"
   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
