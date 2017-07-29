@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Anton|Gloria+Hallelujah|Lobster|Open+Sans|Passion+One|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Anton|Gloria+Hallelujah|Open+Sans');
 $cl500: #00bcd4;
 $cls: #ff6d00;
 $clsl: #ff9e40;
 $clsh: #c43c00;
-$widBG: #f2f2f2;
+$b: 40;
+$widFont: rgba($b, $b, $b, 0.8);
+$a: 250;
+$widBG: rgba($a, $a, $a, 0.9);
 
 
 body{
@@ -92,11 +95,63 @@ main{
   div.row{
     div{
       padding: 10px;
+      position: relative;
+      div.bg{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+        img{
+          width: 100%;
+          height: 100%;
+          filter: blur(1px);
+        }
+      }
       div.widget{
+        color: $widFont;
         box-shadow: 0 0 5px grey;
         min-height: 200px;
-        background: $widBG;
+        // background: $widBG url('img/paris.jpg');
+        background-color: $widBG;
+        // background-image: url('../img/paris.jpg');
+        // background-position: right;
+        // background-repeat: no-repeat;
         position: relative;
+        div.notification{
+          width: 60%;
+          background: $clsh;
+          padding: 10px;
+          border-radius: 5px;
+          text-align: center;
+          color: white;
+          margin-bottom: 10px;
+          position: absolute;
+          opacity: 0.95;
+          top: -20px;
+          left: 50%;
+          font-weight: 900;
+          opacity: 0;
+          transform-origin: center bottom;
+          &.active{
+            animation: note 800ms ease-in-out forwards;
+          }
+          &:after{
+            top: 100%;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(0, 151, 167, 0);
+            border-top-color: $clsh;
+            border-width: 16px;
+            margin-left: -16px;
+          }
+        }
         div{
           padding: 0;
           margin: 0;
@@ -214,29 +269,53 @@ footer.jumbotron{
   padding-bottom: 10px;
   position: relative;
   div.container{
-    div.to-top{
-      width: 60px;
-      height: 60px;
-      position: absolute;
-      top: -30px;
-      right: 50px;
-      background: $cls;
-      border-radius: 100%;
-      cursor: pointer;
-      img{
+    a{
+      div.to-top{
+        width: 60px;
+        height: 60px;
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(-90deg);
+        top: -30px;
+        right: 50px;
+        background: $cls;
+        border-radius: 100%;
+        cursor: pointer;
+        img{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(-90deg);
+        }
       }
     }
     div.row{
       div{
-        ul{
-          padding: 0;
-          list-style: none;
+        div.row{
+          div{
+            ul{
+              padding: 0;
+              list-style: none;
+            }
+          }
         }
       }
+      div{
+        div.row{
+          div.social{
+            padding-top: 20px;
+            text-align: center;
+            img{
+              width: 50px;
+              height: auto;
+              transition: all 0.4s linear;
+              filter: grayscale(100%);
+              &:hover{
+                filter: grayscale(0%);
+              }
+            }
+          }
+        }
+      }
+
       p{
         padding-top: 30px;
         text-align: center;
@@ -297,6 +376,25 @@ div.modal{
   }
   to{
     transform: rotate(360deg);
+  }
+}
+
+@keyframes note {
+  0% {
+    opacity: 0;
+    transform: scale(0.1) rotate(30deg) translateY(50px) rotateX(90deg);
+  }
+  50% {
+    transform: rotate(-10deg) rotateX(-2deg);
+    opacity: 1;
+  }
+  70% {
+    transform: rotate(3deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
@@ -369,6 +467,35 @@ div.modal{
         padding-left: 0px;
         font-family: 'Gloria Hallelujah', cursive;
         font-size: 30px;
+      }
+    }
+  }
+  main{
+    div.row{
+      div{
+        padding: 10px;
+        div.widget{
+          box-shadow: 0 0 5px grey;
+          min-height: 200px;
+          background: $widBG;
+          position: relative;
+          div.notification{
+            width: 60%;
+            background: $clsh;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            color: white;
+            margin-bottom: 10px;
+            position: absolute;
+            opacity: 0.95;
+            top: -20px;
+            left: 30%;
+            font-weight: 900;
+            opacity: 0;
+            transform-origin: center bottom;
+          }
+        }
       }
     }
   }

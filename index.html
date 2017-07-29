@@ -5,14 +5,24 @@
     <meta charset="UTF-8">
     <title>Weather App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Weather in 5 seconds">
-
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="description" content="Accurate weather in your city">
+    <meta name="robots" content="follow"/>
+    <link href="dist/vendors/bootstrap-3.3.6.min.css" rel="stylesheet">
     <link rel="stylesheet" href="dist/main.css">
 
     <!--[if lt IE 9]>
      <script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/manifest.json">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <meta name="msapplication-config" content="favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
 
@@ -43,6 +53,9 @@
   <main class="container">
     <div class="row">
       <div class="col-md-4">
+        <div class="bg">
+          <img src="img/new-york.jpg" alt="bg" />
+        </div>
         <div class="widget">
           <div class="loader">
             <div class="spinner">
@@ -53,6 +66,9 @@
       </div>
 
       <div class="col-md-4">
+        <div class="bg">
+          <img src="img/barcelona.jpg" alt="bg" />
+        </div>
         <div class="widget">
           <div class="loader">
             <div class="spinner">
@@ -62,6 +78,9 @@
         </div>
       </div>
       <div class="col-md-4">
+        <div class="bg">
+          <img src="img/rome.jpg" alt="bg" />
+        </div>
         <div class="widget">
           <div class="loader">
             <div class="spinner">
@@ -71,6 +90,9 @@
         </div>
       </div>
       <div class="col-md-4">
+        <div class="bg">
+          <img src="img/san-franc.jpg" alt="bg" />
+        </div>
         <div class="widget">
           <div class="loader">
             <div class="spinner">
@@ -80,6 +102,9 @@
         </div>
       </div>
       <div class="col-md-4">
+        <div class="bg">
+          <img src="img/berlin.jpg" alt="bg" />
+        </div>
         <div class="widget">
           <div class="loader">
             <div class="spinner">
@@ -89,6 +114,9 @@
         </div>
       </div>
       <div class="col-md-4">
+        <div class="bg">
+          <img src="img/warsaw.jpg" alt="bg" />
+        </div>
         <div class="widget">
           <div class="loader">
             <div class="spinner">
@@ -98,6 +126,9 @@
         </div>
       </div>
       <div class="col-md-4">
+        <div class="bg">
+          <img src="img/paris.jpg" alt="bg" />
+        </div>
         <div class="widget">
           <div class="loader">
             <div class="spinner">
@@ -110,6 +141,7 @@
       <div class="col-md-4 new" id="new">
         <div class="widget">
           <h3>Add another city</h3>
+          <div class="notification">You must type at least one letter to search</div>
           <input type="text" id="city" />
           <button data-toggle="modal" type="button" name="button" id="search">Search</button>
         </div>
@@ -131,7 +163,6 @@
               <h4>We gather data from:</h4>
                 BBC, Forecast.io, HAMweather, Met Office, OpenWeatherMap, Weather Underground, World Weather Online
                 Yahoo
-              </ul>
             </div>
             <div class="col-xs-4 col-md-4">
               <h4>Weather forecast brought to you by:</h4>
@@ -150,6 +181,22 @@
               </ul>
             </div>
           </div>
+        </div>
+        <div class="col-md-offset-2 col-md-2">
+          <div class="row">
+            <div class="col-xs-4 col-md-4 social">
+              <img src="img/facebook.png" alt="visit our's facebook profile" />
+            </div>
+            <div class="col-xs-4 col-md-4 social">
+              <img src="img/twitter.png" alt="visit our's facebook profile" />
+            </div>
+            <div class="col-xs-4 col-md-4 social">
+              <img src="img/insta.png" alt="visit our's facebook profile" />
+            </div>
+          </div>
+
+
+
         </div>
       </div>
       <div class="row">
@@ -173,7 +220,7 @@
           <div id="result">
             <div class="loader">
               <div class="spinner">
-                loool
+
               </div>
             </div>
           </div>
@@ -186,13 +233,8 @@
     </div>
   </div>
 
-  <script
-  src="http://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="js/app.js"></script>
-
-  </script>
+  <script src="dist/vendors/jquery-2.2.4.min.js"></script>
+  <script src="dist/vendors/bootstrap-3.3.6.min.js"></script>
+  <script src="dist/app.js"></script>
 </body>
 </html>
